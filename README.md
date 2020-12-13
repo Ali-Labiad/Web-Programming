@@ -1,2 +1,2 @@
 # Django
-simple projet de django
+web programming with python django and javascript
