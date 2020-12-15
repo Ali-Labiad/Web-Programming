@@ -80,7 +80,6 @@ input[type=submit]:hover {
 }
 
 .container {
-
     max-width: 1140px;
     width: 96%;
     margin: 40px 2% 0 45px;
@@ -126,12 +125,10 @@ input[type=submit]:hover {
     vertical-align: middle;
     width: 50%;
 }
-
 @media screen and (max-width: 600px) {
 
-    .col-50 ,.col-30, .container{
-
-        width: 100%;
+    .col-50 ,.col-15,.container{
+        width: 90%;
         margin-top: 0;
     }
     .col-30{
