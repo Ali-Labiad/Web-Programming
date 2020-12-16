@@ -72,7 +72,18 @@ body{
 	top: 10px;
 	left: 15px;
 }
-.mic{
+.Google_logo_label{
+	position: relative;
+	width: 28px;
+	height: 31px;
+	float: right;
+	top: -40px;
+	right: 240px;
+	color: #4285f4;
+    font: 16px/16px roboto-regular, arial, sans-serif;
+}
+
+.mic_index{
 	position: relative;
 	width: 28px;
 	height: 31px;
@@ -80,6 +91,32 @@ body{
 	top: -75px;
 	right: 60px;
 }
+.mic{
+	position: relative;
+	width: 28px;
+	height: 31px;
+	float: right;
+	top: -35px;
+	right: 70px;
+}
+.mag-glass{
+	position: relative;
+	width: 20px;
+	height: 22px;
+	float: right;
+	top: -30px;
+	right: 60px;
+}
+.camera_clasess{
+	position: relative;
+	width: 20px;
+	height: 22px;
+	float: right;
+	top: -35px;
+	right: 80px;
+}
+
+
 .s_buttonS{
 	height: 40px;
 	width: 380px;

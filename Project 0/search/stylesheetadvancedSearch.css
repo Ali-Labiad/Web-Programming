@@ -13,7 +13,7 @@ body {
 .srch {
     height: 20px;
     width: 40px;
-    display: block;
+    display: inline;
     margin-right: 10px;
 }
 
