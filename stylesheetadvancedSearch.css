@@ -1,0 +1,137 @@
+body {
+    background-color: #fff;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+.top_navbar {
+    position: absolute;
+    right: 20px;
+}
+
+.srch {
+    height: 20px;
+    width: 40px;
+    display: inline;
+    margin-right: 10px;
+}
+
+.Search {
+    font-family: Arial;
+    text-decoration: none;
+    color: #737373;
+    font-size: small;
+}
+
+.Search:hover {
+    text-decoration: underline;
+}
+
+.Google_logo{
+    padding: 5px;
+    background-color:#F1F1F1;
+}
+
+.appbar{
+    color: red;
+    border-bottom: 1px solid gainsboro;
+    font-size: 20px;
+    margin: 25px 35px;
+}
+
+input[type=text] {
+
+    width: 100%;
+    text-align: left;
+    border-radius: 1px;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    font-size: 13px;
+    height: 25px;
+    display: inline-block;
+}
+
+input[type=text]:focus {
+    outline: none;
+    border: 1px solid #4D90FE;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+
+    background-color: #4d90fe;
+    background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed);
+    border-radius: 2px;
+    border: 1px solid #3079ed;
+    width: 126px;
+    height: 36px;
+    color: #fff;
+    float: right;
+}
+
+input[type=submit]:hover {
+    border:1px solid #C6C6C6;
+	color: black;
+}
+
+.container {
+    max-width: 1140px;
+    width: 96%;
+    margin: 40px 2% 0 45px;
+}
+
+.col-15 {
+
+    float: left;
+    width: 16%;
+    height: 42px;
+    vertical-align: middle;
+    color: #222;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.col-50 {
+
+    float: left;
+    min-height: 41px;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.col-30 {
+
+    float: left;
+    width: 32%;
+    min-width: 160px;
+    margin: 0 0 8px 1%;
+    color: #555;
+    font-size: 11px;
+    padding-left: 10px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.s_buttonS {
+
+    float: left;
+    min-width: 167px;
+    min-height: 41px;
+    vertical-align: middle;
+    width: 50%;
+}
+@media screen and (max-width: 600px) {
+
+    .col-50 ,.col-15,.container{
+        width: 90%;
+        margin-top: 0;
+    }
+    .col-30{
+        display: none;
+    }
+}
