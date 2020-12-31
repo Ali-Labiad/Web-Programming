@@ -1,0 +1,161 @@
+body{
+	background-color: #fff;
+	padding: 0px;
+	margin: 0px;
+	border:0px;
+}
+.top_navbar{
+	position: absolute;
+	display: inline-block;
+	right:20px;
+}
+.Gm{
+	height: 20px;
+	width: 40px;
+	display: inline;
+	margin-right: 10px;
+}
+.Im{
+	height: 20px;
+	width: 40px;
+	display: inline;
+	margin-right: 10px;
+}
+.Gmail{
+	font-family: Arial;
+	text-decoration: none;
+	color: #737373;
+	font-size: small;
+}
+.Gmail:hover{
+	text-decoration: underline;
+}
+.Images{
+	font-family: Arial;
+	text-decoration: none;
+	color: #737373;
+	font-size: small;
+}
+.Images:hover{
+	text-decoration: underline;
+}
+.middle{
+	margin: 0 auto;
+	position: relative;
+	height: 260px;
+	width: 660px;
+	top: 200px;
+	left: 15px;
+}
+
+.Google_logo{
+	height: 116px;
+	width: 300px;
+	position: relative;
+	margin: 0 auto;
+}
+.sbar{
+	width: 586px;
+	height: 40px;
+	border: 1px solid #D9D9D9;
+	padding: 10px;
+}
+.sbar:focus{
+	outline: none;
+	border: 1px solid #4D90FE;
+}
+.search_bar{
+	position: relative;;
+	margin: 0 auto;
+	width: 640px;
+	height: 120px;
+	top: 10px;
+	left: 15px;
+}
+.Google_logo_label{
+	position: relative;
+	width: 28px;
+	height: 31px;
+	float: right;
+	top: -40px;
+	right: 240px;
+	color: #4285f4;
+    font: 16px/16px roboto-regular, arial, sans-serif;
+}
+
+.mic_index{
+	position: relative;
+	width: 28px;
+	height: 31px;
+	float: right;
+	top: -75px;
+	right: 60px;
+}
+.mic{
+	position: relative;
+	width: 28px;
+	height: 31px;
+	float: right;
+	top: -35px;
+	right: 70px;
+}
+.mag-glass{
+	position: relative;
+	width: 20px;
+	height: 22px;
+	float: right;
+	top: -30px;
+	right: 60px;
+}
+.camera_clasess{
+	position: relative;
+	width: 20px;
+	height: 22px;
+	float: right;
+	top: -35px;
+	right: 80px;
+}
+
+
+.s_buttonS{
+	height: 40px;
+	width: 380px;
+	position: relative;
+	margin: 0 auto;
+	top: 30px;
+	left: 20px;
+}
+.search_button{
+	background-color: #F3F3F3;
+	color: #988478;
+	width: 126px;
+	height: 36px;
+	position: relative;
+	right: 3px;
+	border: hidden;
+	border-radius: 2px;
+}
+.search_button:hover{
+	border:1px solid #C6C6C6;
+	color: black;
+}
+.lucky_button{
+	background-color: #F3F3F3;
+	color: #988478;
+	width: 144px;
+	height: 36px;
+	position: relative;
+	left: 3px;
+	border: hidden;
+	border-radius: 2px;
+}
+.lucky_button:hover{
+	border:1px solid #C6C6C6;
+	color: black;
+}
+input[type=submit] {
+color:#757575;
+font-family: Arial;
+font-size: 13px;
+font-weight: bolder;
+}
