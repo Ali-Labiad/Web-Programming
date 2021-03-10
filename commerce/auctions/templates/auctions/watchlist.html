@@ -1,0 +1,26 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% if not watchlists %}
+        <div class="alert alert-success" role="alert">
+            Watchlist Not Available
+        </div>
+        {% endif %}
+        {% for watchlist in watchlists %}
+        {% if dic_active_listing|get_item:watchlist.auctionlist.id %}
+        <div class="col-md-3 column productbox">
+            <img src= {{watchlist.auctionlist.url}} class="img-fluid">
+            <div class="producttitle">{{ watchlist.auctionlist.title }}</div>
+            <div class="producdescription">{{ watchlist.auctionlist.description }}</div>
+            <div class="productprice">
+                <div class="pull-right"><a href="{% url 'listing' watchlist.auctionlist.id %}"
+                        class="btn btn-danger btn-sm" role="button">Click</a></div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+{% if messages %}
+<div class="alert alert-danger">
+    {% for message in messages %}
+     {{ message }}
+    {% endfor %}
+</div>
+{% endif %}    
+<h2>{{ name }}</h2>
+{{ data |safe }}
+<a href="{% url 'edit' name=name %}">Edit Page</a>
+{% endblock %}

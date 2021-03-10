@@ -1,0 +1,54 @@
+body {
+    font-family: "Amazon Ember", Arial, sans-serif;
+    padding: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.productbox {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+}
+
+.producttitle {
+    font-weight: bold;
+    padding: 5px 0 5px 0;
+}
+
+.description {
+    text-align: justify;
+}
+
+.productprice {
+    border-top: 1px solid #dadada;
+    padding-top: 5px;
+}
+
+.pricetext {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.comment-user {
+    padding: 0px;
+    margin: 0px;
+}
+.comment-date {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
+.comment-img {
+    padding: 0px;
+    margin: 0px;
+}

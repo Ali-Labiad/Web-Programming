@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% if not auctionlist %}
+        <div class="alert alert-success" role="alert">
+            Active Listing Not Available
+        </div>
+        {% endif %}
+        {% for auction in auctionlist %}
+        <div class="col-md-3 column productbox">
+            <a href="{% url 'listing' auction.id %}"><img src={{auction.url}} class="img-fluid" alt = "No Image"></a>
+            <div class="producttitle">{{ auction.title }}</div>
+            <div class="producdescription">{{ auction.description }}</div>
+            <div class="productprice">
+                <div class="pull-right"><a href="{% url 'listing' auction.id %}" class="btn btn-danger btn-sm"
+                        role="button">Click</a></div>
+                <div class="pricetext"> $ {{ dic_price|get_item:auction.id }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
