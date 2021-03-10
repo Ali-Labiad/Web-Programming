@@ -1,0 +1,155 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{listing.url}}" alt="Image Not Found" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                {% if user.is_authenticated %}
+                <form action="{% url 'addwatchlist' listing.id %}" method="POST">
+                    {% csrf_token %}
+                    {% if watched %}
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-secondary btn-sm">Unwatched</button>
+                    </div>
+                    {%else%}
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-warning btn-sm">Watched</button>
+                    </div>
+                    {% endif %}
+                </form>
+                <form action="{% url 'closelisting' listing.id %}" method="POST">
+                    {% csrf_token %}
+                    {% if closelisting %}
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-danger btn-sm">Close</button>
+                    </div>
+                    {% endif %}
+                </form>
+                {% endif %}
+            </div><!-- end row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{{listing.title}}</h1>
+                </div>
+            </div><!-- end row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="badge badge-primary">Listing</span>
+                    <span class="monospaced">No. {{listing.id}}</span>
+                </div>
+            </div><!-- end row -->
+            <div class="row top-buffer">
+                <div class="col-md-12">
+                    <p class="description">
+                        {{listing.description}}
+                    </p>
+                </div>
+            </div><!-- end row -->
+            <div class="row top-buffer">
+                <div class="col-md-12">
+                    <span class="sr-only">Four out of Five Stars</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span class="badge badge-success">{{numberofbids}}</span>
+                    <label><small>bid(s) so far, Your bid is the current bid</small></label>
+                </div>
+            </div><!-- end row -->
+            <div class="row top-buffer">
+                <div class="col-md-4 bottom-rule">
+                    <h2 class="product-price">$ {{currentprice}}</h2>
+                </div>
+            </div><!-- end row -->
+            {% if user.is_authenticated %}
+            <!-- Nav tabs -->
+            <ul class="nav nav-pills mb-3 top-buffer" id="pills-tab" role="tablist">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-bid-tab" data-toggle="pill" href="#pills-bid" role="tab"
+                        aria-controls="pills-pid" aria-selected="true">Bid</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-comments-tab" data-toggle="pill" href="#pills-comments" role="tab"
+                        aria-controls="pills-comments" aria-selected="false">All Comments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-comment-tab" data-toggle="pill" href="#pills-comment" role="tab"
+                        aria-controls="pills-comment" aria-selected="false">Add New Comment</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-comments-tab" data-toggle="pill" href="#pills-comments"
+                        role="tab" aria-controls="pills-comments" aria-selected="true">All Comments</a>
+                </li>
+                {% endif %}
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-bid" role="tabpanel" aria-labelledby="pills-home-tab">
+                    {% if winner %}
+                    <div class="alert alert-success" role="alert">
+                        congratulations ! Your Are The Winner.
+                    </div>
+                    {% else %}
+                    <form form action="{% url 'addbid' listing.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Enter Your Bid</label>
+                            <input type="text" class="form-control" name="amount" id="amount"
+                                placeholder="Enter Your Amount Here">
+                            {% for message in messages %}
+                            <div class="alert alert-danger">
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    {% endif %}
+                </div>
+                <div class="tab-pane fade" id="pills-comments" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    {% for comment  in comments %}
+                    <div class="row top-buffer">
+                        <div class="col-md-2 bottom-rule comment-img">
+                            <img src="http://placehold.it/460x250/e67e22/ffffff&text=HTML5" alt="html image when error"
+                                class="img-fluid rounded-circle">
+                        </div>
+                        <div class="col-md-3 bottom-rule">
+                            <div>
+                                <label class="comment-user">{{comment.user.username}}</label>
+                                <br>
+                                <lable class="comment-date">{{comment.date}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end row-->
+                    <div class="row top-buffer">
+                        <div class="col-md-12 bottom-rule">
+                            <p>{{comment.comment}}
+                            </p>
+                        </div>
+                    </div>
+                    <!--end row-->
+                    {% endfor %}
+                </div>
+                <div class="tab-pane fade" id="pills-comment" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <form action="{% url 'addcomment' listing.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Type Your Comment</label>
+                            <textarea class="form-control" name="newcomment" id="newcomment" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div><!-- end row -->
+</div><!-- end container -->
+{% endblock %}
